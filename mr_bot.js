@@ -9,7 +9,7 @@ function run(){
 
     win = window.open(base_url + w1 + '+' + w2 + '+' + w3, '_blank')
 
-    window.setTimeout(close_window, 5000, win)
+    window.setTimeout(close_window, 10000, win)
   }
 }
 
