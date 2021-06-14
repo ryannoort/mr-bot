@@ -1,24 +1,13 @@
+const NUM_FRAMES = 20
 var base_url = 'http://www.bing.com/search?q='
 
-function run(){
-  for(i = 0; i < 30; i++)
-  {
-    w1 = randWord()
-    w2 = randWord()
-    w3 = randWord()
-
-    win = window.open(base_url + w1 + '+' + w2 + '+' + w3, '_blank')
-
-    window.setTimeout(close_window, 10000, win)
-  }
-}
-
-function close_window(win){
-  win.close()
+function changeSource(frame_num) {
+  $("iframe#frame-" + frame_num).attr('src', base_url + randWord() + '+' + randWord() + '+' + randWord())
+  window.setTimeout(function() { changeSource(++frame_num % NUM_FRAMES) }, 50)
 }
 
 function randWord(){
   return words[Math.floor(Math.random() * len)]
 }
 
-$(document).ready(function(){ $('input[name=run_button]').click(run) })
+$(document).ready(function(){ $('input[name=run_button]').click(function() { changeSource(0) }) })
