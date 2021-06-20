@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Frame from './frame/Frame';
+import Frames from './Frames';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Frame />
+    <div className="h-screen">
+      <Frames />
+     </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
