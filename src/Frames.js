@@ -33,7 +33,7 @@ class Frames extends React.Component {
   updateSource(frameId) {
     if(!window.Paused) {
       var element = document.getElementById(`frame-${frameId}`);
-      var src = `http://www.bing.com/search?q=${randomWord()}+${randomWord()}+${randomWord()}`;
+      var src = `https://www.bing.com/search?q=${randomWord()}+${randomWord()}+${randomWord()}`;
       element.setAttribute("src", src);
     }
 
